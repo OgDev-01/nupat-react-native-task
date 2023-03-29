@@ -1,1 +1,0 @@
-# nupat-react-native-task

@@ -39,4 +39,4 @@ Click [here](https://expo.dev/accounts/oliviamegan11/projects/nupat-react-native
 
 ## Development challanges
 
-I Only had issues with getting the exact font's used accross the application on the design. I managed to get one's that look like the origin one on the design from expo font
+I Only had issues with getting the exact font's used accross the application on the design. I managed to get one's that look like similar to the one's in  the design from expo font

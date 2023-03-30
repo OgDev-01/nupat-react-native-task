@@ -1,4 +1,4 @@
-import { View, Text, useWindowDimensions, Animated } from "react-native";
+import { useWindowDimensions, Animated } from "react-native";
 import React from "react";
 import { HStack } from "native-base";
 
@@ -10,7 +10,7 @@ interface FluidIndicatorProps {
 const FluidIndicator = ({ data, scrollX, step }: FluidIndicatorProps) => {
     const { width } = useWindowDimensions();
     return (
-        <HStack space={6} className="py-4 justify-center">
+        <HStack space={6} className="justify-center py-4">
             {data.map((dot, i) => {
                 const inputRange = [
                     (i - 1) * width,

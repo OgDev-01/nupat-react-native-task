@@ -1,3 +1,4 @@
+import React from "react";
 import {
     View,
     Text,
@@ -5,9 +6,10 @@ import {
     useWindowDimensions,
     Image
 } from "react-native";
+
 import { MaterialIcons } from "@expo/vector-icons";
-import React from "react";
 import { AspectRatio, Box, HStack, VStack } from "native-base";
+
 import RatingPill from "@/components/atoms/RatingPill/RatingPill";
 import { FoodObject } from "./data";
 

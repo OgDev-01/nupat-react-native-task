@@ -1,10 +1,10 @@
 import React from "react";
-import { NativeBaseProvider, Box } from "native-base";
-import CategoryPill from "./src/components/atoms/CategoryPill/CategoryPill";
+import { StatusBar } from "react-native";
 import { useFonts } from "expo-font";
+import { NativeBaseProvider } from "native-base";
+
 import { NavigationContainer } from "@react-navigation/native";
 import StackNavigation from "./src/navigation/StackNavigation";
-import { StatusBar } from "react-native";
 
 export default function App() {
     const [fontsLoaded] = useFonts({

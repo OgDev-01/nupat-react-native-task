@@ -1,27 +1,24 @@
-import {
-    View,
-    Text,
-    ScrollView,
-    TouchableOpacity,
-    Image,
-    Pressable
-} from "react-native";
+import React from "react";
+import { Text, ScrollView, TouchableOpacity } from "react-native";
+
+import { Button, HStack, VStack } from "native-base";
+
 import {
     FontAwesome5,
     MaterialCommunityIcons,
     Feather,
     SimpleLineIcons
 } from "@expo/vector-icons";
-import React from "react";
+import { useNavigation } from "@react-navigation/native";
+
 import Input from "@/components/atoms/Input/Input";
-import { Button, HStack, VStack } from "native-base";
 import AuthDivider from "@/components/atoms/AuthDivider/AuthDivider";
 import SocialAuthButtons from "@/components/molecules/SocialAuthButtons/SocialAuthButtons";
-import { useNavigation } from "@react-navigation/native";
 import { AUTH_STACK } from "@/navigation/routes";
 
 const SignUp = () => {
     const navigation = useNavigation();
+
     return (
         <ScrollView className="flex-1 bg-white">
             <VStack space={6} className="px-6 py-10">

@@ -1,22 +1,18 @@
+import React from "react";
 import {
     Image,
     Text,
     TouchableOpacity,
     useWindowDimensions
 } from "react-native";
-import { FontAwesome5, Feather } from "@expo/vector-icons";
-import React from "react";
+
 import { AspectRatio, Box, HStack } from "native-base";
+import { FontAwesome5, Feather } from "@expo/vector-icons";
+
 import RatingPill from "@/components/atoms/RatingPill/RatingPill";
 import { HiglightObject } from "./data";
 
-const HighlightCard = ({
-    title,
-    rating,
-    km,
-    isDeliverable,
-    imgSrc
-}: HiglightObject) => {
+const HighlightCard = ({ title, rating, km, imgSrc }: HiglightObject) => {
     const { width } = useWindowDimensions();
     return (
         <TouchableOpacity className="mr-8" style={{ width: width * 0.6 }}>

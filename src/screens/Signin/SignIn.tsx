@@ -1,12 +1,14 @@
-import { View, Text, TouchableOpacity } from "react-native";
-import { FontAwesome5, SimpleLineIcons } from "@expo/vector-icons";
 import React from "react";
-import Input from "@/components/atoms/Input/Input";
+import { View, Text, TouchableOpacity } from "react-native";
+
+import { FontAwesome5, SimpleLineIcons } from "@expo/vector-icons";
 import { Button, HStack, VStack } from "native-base";
+import { AUTH_STACK, ROOT_STACK } from "@/navigation/routes";
+import { useNavigation } from "@react-navigation/native";
+
+import Input from "@/components/atoms/Input/Input";
 import AuthDivider from "@/components/atoms/AuthDivider/AuthDivider";
 import SocialAuthButtons from "@/components/molecules/SocialAuthButtons/SocialAuthButtons";
-import { useNavigation } from "@react-navigation/native";
-import { ROOT_STACK } from "@/navigation/routes";
 
 const SignIn = () => {
     const navigation = useNavigation();
@@ -71,7 +73,14 @@ const SignIn = () => {
                     <Text style={{ fontFamily: "Montserrat Regular" }}>
                         Not registered yet?
                     </Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() =>
+                            navigation.reset({
+                                index: 0,
+                                routes: [{ name: AUTH_STACK.SIGN_UP as never }]
+                            })
+                        }
+                    >
                         <Text style={{ fontFamily: "Montserrat Bold" }}>
                             Sign Up
                         </Text>

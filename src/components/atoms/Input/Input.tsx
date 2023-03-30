@@ -1,13 +1,7 @@
-import {
-    View,
-    Text,
-    TextInput,
-    ScrollView,
-    TouchableWithoutFeedback,
-    Keyboard
-} from "react-native";
 import React from "react";
 import { HStack } from "native-base";
+
+import { TextInput, TouchableWithoutFeedback, Keyboard } from "react-native";
 
 interface InputProps {
     placeholder?: string;
@@ -24,7 +18,7 @@ const Input = ({ placeholder, rightIcon, type }: InputProps) => {
             ? "numeric"
             : "default";
     return (
-        <HStack className="bg-secondary rounded-lg items-center px-3">
+        <HStack className="items-center px-3 rounded-lg bg-secondary">
             {rightIcon}
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss}>
                 <TextInput
@@ -32,7 +26,7 @@ const Input = ({ placeholder, rightIcon, type }: InputProps) => {
                     keyboardType={keyboardType}
                     placeholder={placeholder}
                     style={{ fontFamily: "Montserrat Regular" }}
-                    className="w-full  text-xl h-12 px-3"
+                    className="w-full h-12 px-3 text-xl"
                 />
             </TouchableWithoutFeedback>
         </HStack>

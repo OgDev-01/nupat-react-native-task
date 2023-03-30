@@ -10,7 +10,7 @@ const VerifyOtp = () => {
     const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
     const handleNumberPress = (num: string) => {
-        let tempCode = otp;
+        let tempCode = [...otp];
         for (let i = 0; i < tempCode.length; i++) {
             if (tempCode[i] == "") {
                 tempCode[i] = num;
@@ -19,9 +19,8 @@ const VerifyOtp = () => {
                 continue;
             }
         }
+        setOtp(tempCode);
     };
-
-    useEffect(() => {}, [handleNumberPress]);
 
     return (
         <View className="flex-1 bg-white">

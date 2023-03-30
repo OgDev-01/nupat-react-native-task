@@ -1,14 +1,13 @@
+import React, { useState } from "react";
 import {
-    View,
     Text,
     ScrollView,
     TouchableOpacity,
     Image,
-    FlatList,
-    StatusBar
+    FlatList
 } from "react-native";
-import React, { useState } from "react";
-import { Box, HStack, VStack } from "native-base";
+import { Box, HStack } from "native-base";
+
 import Search from "@/components/atoms/Search/Search";
 import CategoryPill from "@/components/atoms/CategoryPill/CategoryPill";
 import HighlightCard from "@/components/molecules/HighlightCard/HighlightCard";
@@ -16,9 +15,11 @@ import { HighlightProduct } from "@/components/molecules/HighlightCard/data";
 import ProductCard from "@/components/molecules/ProductCard/ProductCard";
 import { Foods } from "@/components/molecules/ProductCard/data";
 
-const categories = ["All", "Swallow", "Soup", "Snacks", "Noodles"];
 const Home = () => {
     const [selectedCategory, setSelectedCategory] = useState("All");
+
+    const categories = ["All", "Swallow", "Soup", "Snacks", "Noodles"];
+
     return (
         <ScrollView className="px-5 pt-1 bg-white">
             <Text style={{ fontFamily: "Montserrat Regular" }}>
@@ -99,7 +100,6 @@ const Home = () => {
                     horizontal
                     showsHorizontalScrollIndicator={false}
                 />
-                {/* <ProductCard /> */}
             </Box>
         </ScrollView>
     );

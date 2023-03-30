@@ -7,7 +7,7 @@ import {
     FlatList,
     StatusBar
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { Box, HStack, VStack } from "native-base";
 import Search from "@/components/atoms/Search/Search";
 import CategoryPill from "@/components/atoms/CategoryPill/CategoryPill";
@@ -16,8 +16,9 @@ import { HighlightProduct } from "@/components/molecules/HighlightCard/data";
 import ProductCard from "@/components/molecules/ProductCard/ProductCard";
 import { Foods } from "@/components/molecules/ProductCard/data";
 
-const categories = ["Swallow", "Soup", "Snacks", "Noodles"];
+const categories = ["All", "Swallow", "Soup", "Snacks", "Noodles"];
 const Home = () => {
+    const [selectedCategory, setSelectedCategory] = useState("All");
     return (
         <ScrollView className="px-5 pt-1 bg-white">
             <Text style={{ fontFamily: "Montserrat Regular" }}>
@@ -52,7 +53,20 @@ const Home = () => {
                 <FlatList
                     contentContainerStyle={{ paddingBottom: 2 }}
                     data={categories}
-                    renderItem={({ item }) => <CategoryPill text={item} />}
+                    renderItem={({ item }) => (
+                        <CategoryPill
+                            onPress={() => setSelectedCategory(item)}
+                            classNames={`${
+                                selectedCategory === item
+                                    ? "bg-primary text-white"
+                                    : ""
+                            }`}
+                            textClasses={`${
+                                selectedCategory === item ? "text-white" : ""
+                            }`}
+                            text={item}
+                        />
+                    )}
                     horizontal
                     showsHorizontalScrollIndicator={false}
                 />

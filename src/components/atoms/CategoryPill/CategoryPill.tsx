@@ -7,10 +7,17 @@ interface CategoryPillProps {
     text: string;
     onPress?: () => void;
     classNames?: string;
+    textClasses?: string;
 }
-const CategoryPill = ({ text, onPress, classNames }: CategoryPillProps) => {
+const CategoryPill = ({
+    text,
+    onPress,
+    classNames,
+    textClasses
+}: CategoryPillProps) => {
     return (
         <TouchableOpacity
+            onPress={onPress}
             style={{
                 elevation: 8,
                 shadowColor: "rgba(81, 127, 36, 0.1)",
@@ -18,9 +25,9 @@ const CategoryPill = ({ text, onPress, classNames }: CategoryPillProps) => {
                 shadowOpacity: 1,
                 shadowRadius: 25
             }}
-            className={`bg-secondary px-10 py-3 rounded-2xl w-max mr-4 ${classNames}`}
+            className={`bg-secondary px-10 py-3 rounded-xl w-max mr-4 ${classNames}`}
         >
-            <Typography text={text} />
+            <Typography classNames={textClasses} text={text} />
         </TouchableOpacity>
     );
 };

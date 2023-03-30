@@ -8,8 +8,8 @@ interface TabHeaderProps {
 }
 const TabHeader = ({ title }: TabHeaderProps) => {
     return (
-        <HStack className="justify-between items-center px-5 h-14 ">
-            {/* <Image /> */}
+        <HStack className="items-center justify-between px-5 bg-white h-14">
+            <Image source={require("@app/assets/burger.png")} />
             <Pressable>
                 <MaterialCommunityIcons name="bell" size={24} color="green" />
             </Pressable>

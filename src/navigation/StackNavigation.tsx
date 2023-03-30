@@ -6,11 +6,16 @@ import { AUTH_STACK, ROOT_STACK } from "./routes";
 import SignUp from "@/screens/Signup/SignUp";
 import SignIn from "@/screens/Signin/SignIn";
 import TabNavigation from "./TabNavigation";
+import VerifyOtp from "@/screens/VerifyOtp/VerifyOtp";
 
 const Stack = createStackNavigator();
 const StackNavigation = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator
+            screenOptions={{
+                headerTitleStyle: { fontFamily: "Montserrat Bold" }
+            }}
+        >
             <Stack.Screen
                 options={{ headerShown: false }}
                 name={AUTH_STACK.ON_BOARDING}
@@ -26,6 +31,11 @@ const StackNavigation = () => {
                     options={{ title: "Sign In" }}
                     name={AUTH_STACK.SIGN_IN}
                     component={SignIn}
+                />
+                <Stack.Screen
+                    options={{ title: "Verification Code" }}
+                    name={AUTH_STACK.VERIFY_OTP}
+                    component={VerifyOtp}
                 />
             </Stack.Group>
 

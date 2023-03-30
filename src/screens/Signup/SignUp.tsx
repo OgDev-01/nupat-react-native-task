@@ -83,9 +83,14 @@ const SignUp = () => {
                     placeholder="Location"
                 />
 
-                <Button className="py-5 rounded-lg bg-primary text-lg">
+                <Button
+                    onPress={() =>
+                        navigation.navigate(AUTH_STACK.VERIFY_OTP as never)
+                    }
+                    className="py-5 text-lg rounded-lg bg-primary"
+                >
                     <Text
-                        className="text-white text-lg"
+                        className="text-lg text-white"
                         style={{ fontFamily: "Montserrat Regular" }}
                     >
                         Create Account

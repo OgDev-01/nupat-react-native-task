@@ -4,6 +4,7 @@ import CategoryPill from "./src/components/atoms/CategoryPill/CategoryPill";
 import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import StackNavigation from "./src/navigation/StackNavigation";
+import { StatusBar } from "react-native";
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -15,6 +16,11 @@ export default function App() {
     if (!fontsLoaded) return null;
     return (
         <NativeBaseProvider>
+            <StatusBar
+                backgroundColor={"white"}
+                barStyle="dark-content"
+                animated
+            />
             <NavigationContainer>
                 <StackNavigation />
             </NavigationContainer>

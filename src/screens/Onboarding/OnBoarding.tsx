@@ -45,13 +45,8 @@ const OnBoarding = () => {
 
     return (
         <SafeAreaView className="flex-1 bg-white">
-            <StatusBar barStyle="light-content" animated />
-            <VStack
-                className="flex-1 
-        "
-                flex={3}
-            >
-                <HStack className="justify-between h-12 items-center px-6 py-2 mt-2">
+            <VStack className="flex-1 " flex={3}>
+                <HStack className="items-center justify-between h-12 px-6 py-2 mt-2">
                     {step !== 0 ? (
                         <TouchableOpacity onPress={handleScrollBackward}>
                             <AntDesign
@@ -105,7 +100,17 @@ const OnBoarding = () => {
                     />
 
                     {step === 2 ? (
-                        <Button className="bg-primary rounded-lg px-12 py-5 text-xl">
+                        <Button
+                            onPress={() =>
+                                navigation.reset({
+                                    index: 0,
+                                    routes: [
+                                        { name: AUTH_STACK.SIGN_UP as never }
+                                    ]
+                                })
+                            }
+                            className="px-12 py-5 text-xl rounded-lg bg-primary"
+                        >
                             <Text
                                 className="text-white"
                                 style={{ fontFamily: "Montserrat Regular" }}
@@ -116,7 +121,7 @@ const OnBoarding = () => {
                     ) : (
                         <Pressable
                             onPress={handleScrollForward}
-                            className="bg-primary rounded-full p-4"
+                            className="p-4 rounded-full bg-primary"
                         >
                             <AntDesign name="right" size={29} color="white" />
                         </Pressable>

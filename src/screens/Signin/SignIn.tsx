@@ -1,30 +1,18 @@
-import {
-    View,
-    Text,
-    ScrollView,
-    TouchableOpacity,
-    Image,
-    Pressable
-} from "react-native";
-import {
-    FontAwesome5,
-    MaterialCommunityIcons,
-    Feather,
-    SimpleLineIcons
-} from "@expo/vector-icons";
+import { View, Text, TouchableOpacity } from "react-native";
+import { FontAwesome5, SimpleLineIcons } from "@expo/vector-icons";
 import React from "react";
 import Input from "@/components/atoms/Input/Input";
-import { Box, Button, HStack, VStack } from "native-base";
+import { Button, HStack, VStack } from "native-base";
 import AuthDivider from "@/components/atoms/AuthDivider/AuthDivider";
 import SocialAuthButtons from "@/components/molecules/SocialAuthButtons/SocialAuthButtons";
 import { useNavigation } from "@react-navigation/native";
-import { ROOT_STACK, TABS } from "@/navigation/routes";
+import { ROOT_STACK } from "@/navigation/routes";
 
 const SignIn = () => {
     const navigation = useNavigation();
     return (
-        <ScrollView className="flex-1 bg-white">
-            <VStack space={8} className="px-6 py-10 flex-1">
+        <View className="flex-1 bg-white">
+            <VStack space={6} className="flex-1 px-6 py-10 ">
                 <Input
                     rightIcon={
                         <FontAwesome5
@@ -55,10 +43,10 @@ const SignIn = () => {
                             routes: [{ name: ROOT_STACK.TABS as never }]
                         })
                     }
-                    className="py-5 rounded-lg bg-primary text-lg"
+                    className="py-5 text-lg rounded-lg bg-primary"
                 >
                     <Text
-                        className="text-white text-lg"
+                        className="text-lg text-white"
                         style={{ fontFamily: "Montserrat Regular" }}
                     >
                         Sign In
@@ -74,24 +62,23 @@ const SignIn = () => {
                     </Text>
                 </TouchableOpacity>
 
-                <VStack className="mt-16" space={6}>
+                <VStack className="mt-16 " space={6}>
                     <AuthDivider />
 
                     <SocialAuthButtons />
-
-                    <HStack space={1} className="justify-center mt-auto">
-                        <Text style={{ fontFamily: "Montserrat Regular" }}>
-                            Not registered yet?
-                        </Text>
-                        <TouchableOpacity>
-                            <Text style={{ fontFamily: "Montserrat Bold" }}>
-                                Sign Up
-                            </Text>
-                        </TouchableOpacity>
-                    </HStack>
                 </VStack>
+                <HStack space={1} className="justify-center mt-auto">
+                    <Text style={{ fontFamily: "Montserrat Regular" }}>
+                        Not registered yet?
+                    </Text>
+                    <TouchableOpacity>
+                        <Text style={{ fontFamily: "Montserrat Bold" }}>
+                            Sign Up
+                        </Text>
+                    </TouchableOpacity>
+                </HStack>
             </VStack>
-        </ScrollView>
+        </View>
     );
 };
 

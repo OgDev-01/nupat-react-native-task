@@ -25,7 +25,7 @@ npm install
 ```
 
 
-To start a local copy of the app on port `3000`:
+To start a local copy of the app on port `exp://192.168.0.144:19000`:
 
 ```shell
 expo start

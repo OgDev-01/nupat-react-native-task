@@ -34,7 +34,7 @@ expo start
 
 ## Live App
 
-Click [here](https://expo.dev/accounts/oliviamegan11/projects/nupat-react-native-task/builds/1a9296d2-61a1-4bc2-a84d-8acfac6901e9) to install and test the preview version of the app
+Click [here](https://expo.dev/accounts/oliviamegan11/projects/nupat-react-native-task/builds/cc4b5b9e-359e-4d5a-93dd-8f89f92df0d4) to install and test the preview version of the app on **Android device Only**
 
 
 ## Development challanges
